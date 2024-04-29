@@ -1,0 +1,25 @@
+meta {
+  name: Создать пользовтеля в приложении
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://1cmycloud.com/console/api/v2/user-lists/{{userlist_id}}/users
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{managmentpanel_token}}
+}
+
+body:json {
+  {
+      "presentation": "Неинтерактивный юзер",
+      "login": "login",
+      "temporary-password": "pass",
+      "phone": "888",
+      "email": "testtest@mail.ru"
+  }
+}
